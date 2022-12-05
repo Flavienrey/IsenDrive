@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "populate": "node ./ressources/populateDb.js",
-    "devstart": "nodemon app.js"
+    "devstart": "node app.js"
   },
   "keywords": [],
   "author": "",
