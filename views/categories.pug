@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  div.grid-container
+    each category in categories
+      div.grid-item
+        a.item-title(href="/categories/" + category._id) #{category.name}
+        if category.size > 1
+          div #{category.size} articles
+        else
+          div #{category.size} article
+    else
+      p Aucun rayon à afficher.

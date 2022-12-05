@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  form(method='POST' action='/categories/post')
+    label(for='name') Nom :
+    input#name.form-control(type='text' name='name' placeholder='Boucherie' required='true')
+    br
+    button.btn.btn-primary(type='submit') Valider
+

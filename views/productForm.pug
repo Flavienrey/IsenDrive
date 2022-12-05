@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  form(method='POST' action='')
+    div.form-group
+      label(for='name') Nom:
+      input#name.form-control(type='text' name='name' required='true')
+
+    div.form-group
+      label(for='category') Rayon:
+      select#category.form-control(name='category' required='true')
+        for category in categories
+            option(value=category._id) #{category.name}
+
+    div.form-group
+      label(for='description') Description:
+      textarea#description.form-control(name='description' rows=5 required='true')
+
+    div.form-group
+      label(for='price') Prix:
+      input#price.form-control(type='number' name='price' required='true' step='.01')
+
+    div.form-group
+      label Tags:
+      br
+      div(style='display: inline; padding-right:10px;')
+        input.checkbox-input(type='checkbox', name='tag', id="1", value="1")
+        label(for="1") Bio
+
+      div(style='display: inline; padding-right:10px;')
+        input.checkbox-input(type='checkbox', name='tag', id="2", value="2")
+        label(for="1") Promo
+
+      div(style='display: inline; padding-right:10px;')
+        input.checkbox-input(type='checkbox', name='tag', id="3", value="3")
+        label(for="1") Nouveau
+
+    button.btn.btn-primary(type='submit') Valider

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+
+    div Rayon :
+        a.item-title(href="/categories/" + category._id)  #{category.name}
+        br
+        br
+    div Prix : #{product.price} €
+        br
+        br
+    div Description : #{product.description}
+
+    hr
+    p
+    a.inline-10(href='/categories/' + categoryId + '/update') Modifier le produit
+    a.inline-10(href='/categories/' + categoryId + '/delete') Supprimer le produit
+

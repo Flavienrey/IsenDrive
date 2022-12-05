@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    p Voulez-vous vraiment supprimer le #{itemType} #{itemName} ?
+
+    form(method='POST' action='')
+        div.form-group
+            input#id.form-control(type='hidden' name='id' required='true' value=itemId )
+
+        button.btn.btn-primary(type='submit') Supprimer

@@ -1,0 +1,22 @@
+doctype html
+html(lang='en')
+    head
+        title= title
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous")
+        link(rel='stylesheet' href='/css/style.css')
+    body
+        div.container-fluid
+            div.row
+                nav.col-sm-2.sidebar-nav
+                    a.nav-link(href='/') Accueil
+                    a.nav-link(href='/categories') Rayons
+                    a.nav-link(href='/products') Produits
+                    hr
+                    a.nav-link(href='/categories/new') Nouveau rayon
+                    a.nav-link(href='/products/new') Nouveau produit (reste à implémenter l'ajout en bdd)
+
+                div.col-sm-10
+                    h1= title
+                    block content
