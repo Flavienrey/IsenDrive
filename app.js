@@ -1,15 +1,16 @@
 require('dotenv').config()
 const debug = require('debug')('http');
-
+const helmet = require('helmet');
+const compression = require('compression');
 const path = require("path");
 const {MongoClient} = require('mongodb');
-
 const express = require('express');
 const app = express();
 
 const morgan = require('morgan')
 app.use(morgan('tiny'));
-
+app.use(helmet());
+app.use(compression());
 app.use(express.static(path.join(__dirname, "public")));
 app.set('views', path.join(__dirname, "views"));
 app.set('view engine', 'pug');
